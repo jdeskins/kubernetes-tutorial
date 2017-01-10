@@ -6,10 +6,12 @@
 
 * Getting Credentials
 
+* Namespaces
+
 * Create Deployment
   * Container Image
   * Labels
-  * Requirements
+  * CPU/Mem Requirements
 
 * Create Service
   * Load Balancer
