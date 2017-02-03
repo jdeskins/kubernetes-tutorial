@@ -22,7 +22,7 @@
 
 * Updating
   * Rolling update
-  * Blue/Green
+  * [Blue-Green](examples/blue-green/README.md)
   * Canary
 
 * Cleaning up
