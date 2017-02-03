@@ -1,7 +1,16 @@
 # Kubernetes Tutorial
 
-## TODO: Create labs for the following
+## Examples
 
+### Deploying
+* [Blue-Green Deployments](examples/blue-green/README.md)
+
+### Cleanup
+```
+kubectl delete service,deployment,rs <APP_NAME>
+```
+
+## TODO: Create labs/examples for:
 * Naming
 
 * Getting Credentials
@@ -22,8 +31,4 @@
 
 * Updating
   * Rolling update
-  * [Blue-Green](examples/blue-green/README.md)
   * Canary
-
-* Cleaning up
-  * Delete deployments, services
