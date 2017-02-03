@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   labels:
     app: hello-app
-    track: stable
+    tier: stable
     version: v2
   name: hello-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: hello-app
+      app: hello-app
       version: v2
   strategy:
     rollingUpdate:
@@ -21,8 +21,8 @@ spec:
   template:
     metadata:
       labels:
-        run: hello-app
-        track: stable
+        app: hello-app
+        tier: stable
         version: v2
     spec:
       containers:
