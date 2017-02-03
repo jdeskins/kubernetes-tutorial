@@ -32,8 +32,16 @@ outputting the version url from the web app.
 kubectl apply -f deployments/v2/helloworld-service-v2.yaml
 ```
 
-## TODO: Remove the previous version
-Use `kubectl` to query with labels to find version: v1
+## Remove the previous version
+Use `kubectl` to query replica sets with labels to find version: v1
+```
+kubectl get rs -l app=<APP_NAME> -l version=<OLD_VERSION> --show-labels
+```
+
+Delete the replica set found above
+```
+#kubectl delete rs <REPLICA_SET>
+```
 
 ## Tear Down Environment
 To remove the services, deployments, and replica sets created, run the following:
