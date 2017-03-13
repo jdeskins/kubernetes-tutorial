@@ -35,9 +35,9 @@ kubectl get svc -o wide
 
 If using minikube for the cluster, you can run `minikube ip` to get the ip of the cluster.
 
-Verify app is running at:  http://<CLUSTER_IP>:<NODE_PORT>
+Verify app is running at:  http://[CLUSTER_IP]:[NODE_PORT]
 
-View version info of the running app at: http://<CLUSTER_IP>:<NODE_PORT>/version
+View version info of the running app at: http://[CLUSTER_IP]:[NODE_PORT]/version
 
 When using LoadBalancer instead of NodePort, a Load Balancer will be created and you can
 use that URL and the port specified in the service.
@@ -63,7 +63,7 @@ kubectl get pods --show-labels=true
 
 You can run the following in a separate terminal to see the version numbers change as the update is rolled out.
 ```
-while true; do curl http://<CLUSTER_IP>:<NODE_PORT>/version; sleep .5; done
+while true; do curl http://[CLUSTER_IP]:[NODE_PORT]/version; sleep .5; done
 ```
 
 Run the update:
