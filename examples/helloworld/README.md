@@ -78,6 +78,7 @@ You should see the version number change as the rolling update takes place.
 kubectl rollout undo deployment/hello-app
 ```
 
+### Minikube Dashboard
 View minikube dashboard:
 ```
 minikube dashboard
