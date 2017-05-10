@@ -40,7 +40,7 @@ kubectl get rs -l app=<APP_NAME> -l version=<OLD_VERSION> --show-labels
 
 Delete the replica set found above
 ```
-#kubectl delete rs <REPLICA_SET>
+kubectl delete rs <REPLICA_SET>
 ```
 
 ## Tear Down Environment
