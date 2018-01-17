@@ -8,7 +8,7 @@ To build your own, run the following command using the name you want.  Replace t
 name in web-deployment-v1.yaml file.  You will also need to push the image to a public repo.
 ```
 cd src
-docker build -t node-demo:2.0 .
+docker build -t node-demo:1.0 .
 ```
 
 ## Run locally using Docker
@@ -26,14 +26,9 @@ docker rm web redis-master
 ## Run in Kubernetes Cluster
 This assumes a k8s cluster is already created and you have access to deploy.
 
-Deploy the Redis services:
+Deploy the Redis and frontend web app:
 ```
-kubectl create -f deployments/redis-master.yaml
-```
-
-Deploy the frontend web app:
-```
-kubectl create -f deployments/web-v1.yaml
+kubectl create -f deployments
 ```
 
 ## Scale the front-end
