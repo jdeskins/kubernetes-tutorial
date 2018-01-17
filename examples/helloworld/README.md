@@ -46,7 +46,7 @@ use that URL and the port specified in the service.
 
 Scale the application to 4 replicas
 ```
-kubectl scale deployment hello-app --replicas=4
+kubectl scale deployment hello-world --replicas=4
 ```
 
 View the pods created:
@@ -75,7 +75,7 @@ You should see the version number change as the rolling update takes place.
 
 ### Rollback the Update
 ```
-kubectl rollout undo deployment/hello-app
+kubectl rollout undo deployment/hello-world
 ```
 
 ### Minikube Dashboard
@@ -86,19 +86,19 @@ minikube dashboard
 
 ### Delete the deployment:
 ```
-kubectl delete service,deployment hello-app
+kubectl delete service,deployment hello-world
 ```
 
 
 ## Without Configuration Files
 A simple way to launch containers without using a configuration file
 ```
-kubectl run hello-app --image=jdeskins/hello-node:1.0 --port=8080
+kubectl run hello-world --image=jdeskins/hello-node:1.0 --port=8080
 ```
 
 Allow the service to be accessible behind a load balancer:
 ```
-kubectl expose deployment hello-app --type="LoadBalancer"
+kubectl expose deployment hello-world --type="LoadBalancer"
 ```
 
 
@@ -111,10 +111,10 @@ while true; do curl http://[EXTERNAL_ADDRESS]:8080/version; sleep .5; done
 
 Run the update:
 ```
-kubectl set image deployment/hello-app hello-app=jdeskins/hello-node:2.0
+kubectl set image deployment/hello-world hello-world=jdeskins/hello-node:2.0
 ```
 
 Delete the deployment:
 ```
-kubectl delete service,deployment hello-app
+kubectl delete service,deployment hello-world
 ```

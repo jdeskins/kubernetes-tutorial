@@ -2,35 +2,35 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: hello-app
+    app: hello-world
     track: stable
-  name: hello-app
+  name: hello-world
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
-      run: hello-app
+      run: hello-world
   strategy:
     rollingUpdate:
       maxSurge: 1
-      maxUnavailable: 1
+      maxUnavailable: 0
     type: RollingUpdate
   template:
     metadata:
       labels:
-        run: hello-app
+        run: hello-world
         track: stable
     spec:
       containers:
-      - name: hello-app
+      - name: hello-world
         image: jdeskins/hello-node:2.0
-#        resources:
-#          limits:
-#            cpu: 250m
-#            memory: 128Mi
-#          requests:
-#            cpu: 100m
-#            memory: 64Mi
+        resources:
+          limits:
+            cpu: 250m
+            memory: 128Mi
+          requests:
+            cpu: 100m
+            memory: 64Mi
         ports:
         - containerPort: 8080
         livenessProbe:
@@ -38,12 +38,12 @@ spec:
             path: /
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 10
+          initialDelaySeconds: 5
           timeoutSeconds: 1
         readinessProbe:
           httpGet:
             path: /
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 5
+          initialDelaySeconds: 3
           timeoutSeconds: 1
