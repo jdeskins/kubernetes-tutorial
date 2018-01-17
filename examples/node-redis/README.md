@@ -45,11 +45,5 @@ kubectl scale deployment node-demo --replicas=3
 
 Remove the running containers:
 ```
-kubectl delete service redis-master node-demo
-kubectl delete deployment redis-master node-demo
-```
-
-To tear down the cluster, from kubernetes root directory, run:
-```
-./cluster/kube-down.sh
+kubectl delete service,deployment redis-master node-demo
 ```
