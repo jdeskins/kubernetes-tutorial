@@ -8,7 +8,7 @@ spec:
   # if your cluster supports it, use type: LoadBalancer to automatically create
   # an external load-balanced IP for the frontend service.
   #type: LoadBalancer
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8080
   selector:
