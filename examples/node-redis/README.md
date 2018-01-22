@@ -24,8 +24,6 @@ docker rm web redis-master
 ```
 
 ## Run in Kubernetes Cluster
-This assumes a k8s cluster is already created and you have access to deploy.
-
 Deploy the Redis and frontend web app.  Pointing to the directory will execute all yaml files in that directory.
 ```
 kubectl -n demo create -f deployments
