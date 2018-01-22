@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: node-demo
+  namespace: demo
+  annotations:
+    kubernetes.io/ingress.class: nginx-private
+  labels:
+    app: node-demo
+    track: stable
+spec:
+  rules:
+  - host: node-demo.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: node-demo
+          servicePort: 8080
