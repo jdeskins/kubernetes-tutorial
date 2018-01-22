@@ -5,9 +5,6 @@ metadata:
   labels:
     app: node-demo
 spec:
-  # if your cluster supports it, use type: LoadBalancer to automatically create
-  # an external load-balanced IP for the frontend service.
-  #type: LoadBalancer
   type: LoadBalancer
   ports:
   - port: 8080
@@ -30,7 +27,7 @@ spec:
   strategy:
     rollingUpdate:
       maxSurge: 1
-      maxUnavailable: 1
+      maxUnavailable: 0
     type: RollingUpdate
   template:
     metadata:

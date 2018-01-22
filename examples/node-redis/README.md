@@ -28,17 +28,22 @@ This assumes a k8s cluster is already created and you have access to deploy.
 
 Deploy the Redis and frontend web app.  Pointing to the directory will execute all yaml files in that directory.
 ```
-kubectl create -f deployments
+kubectl -n demo create -f deployments
+```
+
+## Tail the logs
+```
+kubectl -n demo logs -f [POD_NAME]
 ```
 
 ## Scale the front-end
 ```
-kubectl scale deployment node-demo --replicas=3
+kubectl -n demo scale deployment node-demo --replicas=3
 ```
 
 ## Cleanup
 
 Remove the running containers:
 ```
-kubectl delete service,deployment redis-master node-demo
+kubectl -n demo delete service,deployment redis-master node-demo
 ```
