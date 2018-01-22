@@ -5,6 +5,7 @@ metadata:
     app: hello-world
     track: stable
   name: hello-world
+  namespace: demo
 spec:
   replicas: 2
   selector:

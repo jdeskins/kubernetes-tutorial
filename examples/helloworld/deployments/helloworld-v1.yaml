@@ -2,10 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-world
+  namespace: demo
   labels:
     app: hello-world
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8080
   selector:
@@ -19,6 +20,7 @@ metadata:
     app: hello-world
     track: stable
   name: hello-world
+  namespace: demo
 spec:
   replicas: 2
   selector:
