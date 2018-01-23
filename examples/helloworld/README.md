@@ -1,11 +1,6 @@
 # Hello World Example
 
 
-Verify Nodes are running in your cluster.
-```
-kubectl get nodes
-```
-
 View currently running Pods.
 ```
 kubectl -n demo get pods
