@@ -68,7 +68,7 @@ You should see the version number change as the rolling update takes place.
 
 ### Rollback the Update
 ```
-kubectl rollout undo deployment/hello-world
+kubectl -n demo rollout undo deployment/hello-world
 ```
 
 ### Delete the deployment:
