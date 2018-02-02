@@ -44,12 +44,12 @@ kubectl -n demo scale deployment hello-world --replicas=3
 
 View the pods created:
 ```
-kubectl get pods -o wide
+kubectl -n demo get pods -o wide
 ```
 
 See the labels:
 ```
-kubectl get pods --show-labels=true
+kubectl -n demo get pods --show-labels=true
 ```
 
 ### Update the Image
